@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootView">
+
+    <RelativeLayout
+        android:background="#f5f5f5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnShowLayout"
+            android:layout_alignParentRight="true"
+            android:text="show draggable layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:src="@drawable/droid_dance"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+
+    <!-- the dragging and related views =============================================-->
+    <ImageView
+        android:id="@+id/imgDarkOverlay"
+        android:background="#e0000000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/linDraggable"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:background="#E91E63"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:src="@drawable/android_apps"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="30dp"
+            android:tint="#fff"
+            android:layout_height="200dp" />
+
+        <TextView
+            android:text="This is a draggable Linear Layout"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewTouchListener"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <!-- ============================================= the dragging and related views -->
+
+</FrameLayout>
