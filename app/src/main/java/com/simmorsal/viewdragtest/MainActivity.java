@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    FrameLayout rootView;
     LinearLayout linDraggable;
     View viewTouchListener;
     ImageView imgDarkOverlay;
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         linDraggable = findViewById(R.id.linDraggable);
         viewTouchListener = findViewById(R.id.viewTouchListener);
         imgDarkOverlay = findViewById(R.id.imgDarkOverlay);
-        rootView = findViewById(R.id.rootView);
         btnShowLayout = findViewById(R.id.btnShowLayout);
     }
 
