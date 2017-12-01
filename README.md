@@ -59,6 +59,8 @@ The `LinearLayout` named `linDraggable` is the layout that will be dragged.
 The `View` named `viewTouchListener` is a transparent but clickable View, that is responsible for registering the user's clicks.
 The `ImageView` named `imgDarkOverlay` with a semi-transparent black background, is the darkness behind the `linDraggable`!
 
+[Click here to see the full Gist of the layout code](https://gist.github.com/SIMMORSAL/1e371d9500f2fbddb6d31f4b39ad9b03)
+
 
 
 
