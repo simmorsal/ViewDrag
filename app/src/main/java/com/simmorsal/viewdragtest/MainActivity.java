@@ -8,7 +8,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         viewTouchListener.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()){
+                switch (event.getAction()) {
 
                     // this case is run when the user puts finger on the screen, and this is where
                     // we get our start X and Y values
@@ -90,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void performCalculations(MotionEvent event){
+    private void performCalculations(MotionEvent event) {
 
         // calculating how many pixels has the finger been dragged on the screen
         deltaX = (int) (startX - event.getX());
@@ -98,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
 
         // factors below give us an indication of "From zero to one, how much the layout has been moved"
         // and vice versa  -- "factorFromZero" is not used in this project yet.
-        float factorFromZero = (float)(deltaY) / linHeight;
-        float factorFromOne = (float)(linHeight - deltaY) / linHeight;
+        float factorFromZero = (float) (deltaY) / linHeight;
+        float factorFromOne = (float) (linHeight - deltaY) / linHeight;
 
         // in this project, we want to make sure that the layout will only go upwards, so we move
         // the draggableLayout only if deltaY is bigger or equal to 0
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             // in this line, setting the Y translation to "-deltaY" would work perfectly,
             // but i've multiplied the deltaY value to 4/5 to basically decrease the value
             // and make it feel and move a little heavier
-            linDraggable.setTranslationY(-(int)(deltaY * ((float)4/5)));
+            linDraggable.setTranslationY(-(int) (deltaY * ((float) 4 / 5)));
 
             // imgDarkOverlay is an ImageView with a dark background value which resides
             // behind our draggableLinearLayout
@@ -122,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
         // here we check that if the amount of drag on the screen is more than two thirds of the
         // linDraggable's height ...
-        if (deltaY > linHeight / 3){
+        if (deltaY > linHeight / 3) {
 
             // ... we will animate the linDraggable to completely exit the screen, and ...
             linDraggable.animate().translationY(-linHeight).setDuration(animationDuration).withLayer();

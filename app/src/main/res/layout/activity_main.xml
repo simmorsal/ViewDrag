@@ -5,21 +5,21 @@
 
     <!-- The views behind the draggable layout =================== -->
     <RelativeLayout
-        android:background="#f5f5f5"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#f5f5f5">
 
         <Button
             android:id="@+id/btnShowLayout"
-            android:layout_alignParentRight="true"
-            android:text="show draggable layout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="show draggable layout" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:src="@drawable/droid_dance"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:src="@drawable/droid_dance" />
     </RelativeLayout>
     <!-- =================== The views behind the draggable layout -->
 
@@ -27,40 +27,40 @@
     <!-- the dragging and related views ========================== -->
     <ImageView
         android:id="@+id/imgDarkOverlay"
-        android:background="#e0000000"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="#e0000000" />
 
     <LinearLayout
         android:id="@+id/linDraggable"
-        android:clickable="true"
-        android:orientation="vertical"
-        android:background="#E91E63"
-        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#E91E63"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <ImageView
-            android:src="@drawable/android_apps"
             android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:layout_marginBottom="30dp"
-            android:tint="#fff"
-            android:layout_height="200dp" />
+            android:src="@drawable/android_apps"
+            android:tint="#fff" />
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="This is a draggable Linear Layout"
             android:textColor="#fff"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
     <View
         android:id="@+id/viewTouchListener"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
     <!-- ========================== the dragging and related views -->
 
 </FrameLayout>
