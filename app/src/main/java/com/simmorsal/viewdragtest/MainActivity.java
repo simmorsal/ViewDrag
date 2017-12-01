@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         deltaY = (int) (startY - event.getY());
 
         // factors below give us an indication of "From zero to one, how much the layout has been moved"
-        // and vice versa  -- "factorFromZero" is not used here for now.
+        // and vice versa  -- "factorFromZero" is not used in this project yet.
         float factorFromZero = (float)(deltaY) / linHeight;
         float factorFromOne = (float)(linHeight - deltaY) / linHeight;
 
@@ -150,10 +150,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // we will have to set the visibility of viewTouchListener to GONE, to make the views below
+    // it clickable. and we will preferably set the visibility of linDraggable and imgDarkOverlay
+    // to GONE too for a possibly prevent any performance hits taken from them.
     private void runFinishingCode() {
-        // we will have to set the visibility of viewTouchListener to GONE, to make the views below
-        // it clickable. and we will preferably set the visibility of linDraggable and imgDarkOverlay
-        // to GONE too for a possibly prevent any performance hits taken from them.
         viewTouchListener.setVisibility(View.GONE);
         linDraggable.setVisibility(View.GONE);
         imgDarkOverlay.setVisibility(View.GONE);
