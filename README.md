@@ -340,7 +340,7 @@ is called in `onCreate()`:
 ```
 
 
-[View the full Java code here](https://gist.github.com/b393ad1eb44ebc0fe55151c0e594fd4f)
+[View the full Java code here (Documented)](https://gist.github.com/b393ad1eb44ebc0fe55151c0e594fd4f)
 
 
 
