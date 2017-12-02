@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     // this case runs when the user moves finger on the screen, and this is where
-                    // we update the location of the draggableLinearLayout position, and apply
+                    // we update the location of the linDraggable position, and apply
                     // any other updates to the elements on UI we might want to have
                     case MotionEvent.ACTION_MOVE:
                         performCalculations(event);
