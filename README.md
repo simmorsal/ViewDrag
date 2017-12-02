@@ -200,7 +200,7 @@ which decides how the elements on the UI should lay out, based on the amount of
 drag on the screen
 
 
-###### Doing the magic
+##### Doing the magic
 
 In the `performCalculations()` method is where the magic happens:
 
@@ -252,7 +252,7 @@ back would brighten as we drag `linDraggable` up. For this all we need to do is
 
 
 
-###### Laying out components in proper location
+##### Laying out components in proper location
 
 Now we should see where the user lifts up finger, and decide what should
 happen to `linDraggable`, `imgDarkOverlay` and `viewTouchListener`. And by that
