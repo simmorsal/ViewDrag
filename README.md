@@ -354,6 +354,7 @@ If you liked what you saw, and want to see more, consider buying me a cup
 of coffee, so I can convert it into code :grin:
 
 > My bitcoin address: 15NkTxJMdZinU2rUnENfjt62uHtxXCcpEU
+
 > ![btc_address](https://user-images.githubusercontent.com/24822099/33515691-ec31ec7c-d77b-11e7-8b72-9e2060894859.png)
 
 
