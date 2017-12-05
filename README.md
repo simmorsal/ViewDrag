@@ -350,8 +350,8 @@ is called in `onCreate()`:
 
 ## Donations
 
-If you liked what you saw, and want to see more, consider buying me a cup
-of coffee, so I can convert it into code :grin:
+If you liked what you saw and want to see more, consider buying me a cup
+of coffee so I can convert it into code :grin:
 
 > My bitcoin address: 15NkTxJMdZinU2rUnENfjt62uHtxXCcpEU
 
