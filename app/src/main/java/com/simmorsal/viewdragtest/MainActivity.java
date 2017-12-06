@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void listenForDrag() {
 
-        // we must have a stationary View to listen for clicks, otherwise
+        // we must have a stationary View for listening to clicks, otherwise
         // the data we'll get wont be correct
         viewTouchListener.setOnTouchListener(new View.OnTouchListener() {
             @Override

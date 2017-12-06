@@ -10,9 +10,9 @@ Demo APK: [ViewDrag.zip](https://github.com/SIMMORSAL/ViewDrag/files/1517887/Vie
 
 ## Introduction
 
-Welcome. In this tutorial I will teach you how to create a sliding layout, so so it would move out of UI when you swipe it upward, and the layout behind it will come out of darkness.
+Welcome. In this tutorial I will teach you how to create a sliding layout, so it would move out of UI when you swipe it upward, and the layout behind it will come out of darkness.
 
-All we'll cover here will be creating the GIF you see, but the knowledge is easily transferable,and you will be able to create some neat and awesome stuff with it.
+All we'll cover here will be creating the GIF you see, but once you learn how, you will be able to create some neat and awesome stuff with the knowledge.
 
 
 ## Before we code
@@ -71,7 +71,7 @@ This is a semi-collapsed look at our layout.
 </FrameLayout>
 ```
 
-Our layout has 4 main Views inside it, which are divided to two groups.
+Our layout has 4 main Views inside it, which are divided into two groups.
 
 The first group includes a `RelativeLayout`, which holds all the views behind our draggableLayout.
 Inside it there is a GIF and a Button.
@@ -101,7 +101,7 @@ method. For example we initialize our UI components like this:
     View viewTouchListener;
     ImageView imgDarkOverlay;
     Button btnShowLayout;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +109,7 @@ method. For example we initialize our UI components like this:
 
         initializer();
     }
-
+    
     private void initializer() {
         linDraggable = findViewById(R.id.linDraggable);
         viewTouchListener = findViewById(R.id.viewTouchListener);
@@ -156,7 +156,7 @@ After we get the height, we start listening for touches on the UI through
 ```
     private void listenForDrag() {
 
-        // we must have a stationary View to listen for clicks, otherwise
+        // we must have a stationary View for listening to clicks, otherwise
         // the data we'll get wont be correct
         viewTouchListener.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -202,7 +202,7 @@ drag on the screen
 
 ##### Doing the magic
 
-In the `performCalculations()` method is where the magic happens:
+The `performCalculations()` method is where the magic happens:
 
 ```
     private void performCalculations(MotionEvent event) {
@@ -221,6 +221,9 @@ In the `performCalculations()` method is where the magic happens:
         }
     }
 ```
+
+This method executes whenever user swipes on the screen. even if
+the swipe amount is as small as 1 pixel.
 
 First we calculate the difference between start touch position (`startY` and `X`)
 and the amount of touch movement, and store them inside `deltaX` and `deltaY`.
@@ -258,14 +261,14 @@ Now we should see where the user lifts up finger, and decide what should
 happen to `linDraggable`, `imgDarkOverlay` and `viewTouchListener`. And by that
 I mean:
 
-If the user has dragged a total of one third of `linDraggable`'s height,
+IF, the user has dragged a total of one third of `linDraggable`'s height,
 then after user lifts finger, `linDraggable` should go all the way up until
 its out of the view, `imgDarkOverlay` should completely fade out, and
 `viewTouchListener`'s visibility should be set to `View.GONE` so it wouldn't
 consume any other touches registered on the UI, and any view behind it would be
 interactive.
 
-Else, `linDraggable` should come back to it's original location, `imgDarkOverlay`
+ELSE, `linDraggable` should come back to it's original location, `imgDarkOverlay`
 should get it's original alpha of 1. and nothing would happen to `viewTouchListener`.
 
 We use `ViewAnimator` to animate any changes we want to make, and apply
