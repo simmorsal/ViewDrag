@@ -38,7 +38,7 @@ We'll start by creating the layout, then move to java.
 ### 1. Creating the layout
 
 This is a semi-collapsed look at our layout.
-```
+```XML
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -96,7 +96,7 @@ create multiple methods in our `MainActivity` class, each
 responsible for something, and we call them from the `onCreate()`
 method. For example we initialize our UI components like this:
 
-```
+```java
     LinearLayout linDraggable;
     View viewTouchListener;
     ImageView imgDarkOverlay;
@@ -122,7 +122,7 @@ method. For example we initialize our UI components like this:
 Then we add these variables just above the `onCreate()` method:
 
 
-```
+```java
     int linHeight;
     int startX, startY;
     int deltaX, deltaY;
@@ -132,7 +132,7 @@ Then we add these variables just above the `onCreate()` method:
 Now we create another method in our class named `getHeight` and call it from
 `onCreate()` method:
 
-```
+```java
     private void getHeight() {
         linDraggable.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -153,7 +153,7 @@ it's height value and store it in `linHeight`.
 After we get the height, we start listening for touches on the UI through
 `listenForDrag()` method:
 
-```
+```java
     private void listenForDrag() {
 
         // we must have a stationary View for listening to clicks, otherwise
@@ -204,7 +204,7 @@ drag on the screen
 
 The `performCalculations()` method is where the magic happens:
 
-```
+```java
     private void performCalculations(MotionEvent event) {
 
         deltaX = (int) (startX - event.getX());
@@ -274,7 +274,7 @@ should get it's original alpha of 1. and nothing would happen to `viewTouchListe
 We use `ViewAnimator` to animate any changes we want to make, and apply
 them in `checkWhatShouldHappen()` method:
 
-```
+```java
     private void checkWhatShouldHappen() {
 
         if (deltaY > linHeight / 3) {
@@ -305,7 +305,7 @@ amount it has to go to completely move out of screen.
 * we execute `imgDarkAnimation` with `.withEndAction()` so we know when the
 animation has finished, so we can `runFinishingCode()`:
 
-```
+```java
     private void runFinishingCode() {
         viewTouchListener.setVisibility(View.GONE);
         linDraggable.setVisibility(View.GONE);
@@ -322,7 +322,7 @@ I have optionally added a button to my layout that would reveal the
 `linDraggable` again, which resides in a method named `onClicks()`, and
 is called in `onCreate()`:
 
-```
+```java
     private void onClicks() {
         btnShowLayout.setOnClickListener(new View.OnClickListener() {
             @Override
